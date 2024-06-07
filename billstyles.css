@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f3f6f5, #a450f7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    width: 80vw;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#bill-container {
+    margin-top: 20px;
+}
+
+#bill-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #d35400;
+}
+
+#bill-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#bill-table th, #bill-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#bill-table th {
+    background-color: #f7f7f7;
+    font-size: 18px;
+    color: #333;
+}
+
+#bill-table td {
+    font-size: 16px;
+    color: #555;
+}
+
+#total-amount {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+}
+
+#qr-code {
+    margin-top: 20px;
+}
+
+#qr-code img {
+    width: 150px;
+    height: 150px;
+}

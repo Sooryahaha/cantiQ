@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation</title>
+    <link rel="stylesheet" href="billstyles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="bill-container">
+            <h2>Bill Details</h2>
+            <table id="bill-table">
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Biriyani</td>
+                    <td>2</td>
+                    <td>80 rupees</td>
+                </tr>
+                <tr>
+                    <td>Veg Fried Rice</td>
+                    <td>3</td>
+                    <td>50 rupees</td>
+                </tr>
+                <tr>
+                    <td>Aloo Paratha</td>
+                    <td>4</td>
+                    <td>40 rupees</td>
+                </tr>
+                <tr>
+                    <td>Chapathi</td>
+                    <td>5</td>
+                    <td>40 rupees</td>
+                </tr>
+                <tr>
+                    <td>Mini Meals</td>
+                    <td>6</td>
+                    <td>45 rupees</td>
+                </tr>
+                <tr>
+                    <td>Executive Meals</td>
+                    <td>7</td>
+                    <td>70 rupees</td>
+                </tr>
+            </table>
+            <p>Total: <span id="total-amount">320 rupees</span></p>
+            <div id="qr-code">
+                <img id="qr-image" src="" alt="QR Code">
+            </div>
+        </div>
+    </div>
+    <script>
+        const generateQRCode = () => {
+            const billDetails = {
+                items: [
+                    { name: "Biriyani", quantity: 2, price: "80 rupees" },
+                    { name: "Veg Fried Rice", quantity: 3, price: "50 rupees" },
+                    { name: "Aloo Paratha", quantity: 4, price: "40 rupees" },
+                    { name: "Chapathi", quantity: 5, price: "40 rupees" },
+                    { name: "Mini Meals", quantity: 6, price: "45 rupees" },
+                    { name: "Executive Meals", quantity: 7, price: "70 rupees" }
+                ],
+                total: "320 rupees"
+            };
+            const billDetailsString = JSON.stringify(billDetails);
+            const qrCodeURL = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(billDetailsString)}&size=150x150`;
+            document.getElementById('qr-image').src = qrCodeURL;
+        };
+
+        window.onload = generateQRCode;
+
+        
+    </script>
+</body>
+</html>

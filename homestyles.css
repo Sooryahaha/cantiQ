@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f3f6f5, #a450f7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.container {
+    width: 80vw;
+    max-width: 1200px;
+    background-color: #ece8e8;
+    background: linear-gradient(135deg, #ece8e8, #f79b50);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(239, 3, 3, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 2px solid goldenrod;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    background-color: transparent;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 15px;
+    transition: transform 0.3s;
+    box-shadow: 0px 10px 30px grey;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+}
+
+.user-icon img, .cart-icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* Add this line to remove underline */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+.queue-btn {
+    background-color: green;
+    box-shadow: 0px 10px 30px black;
+}
+
+.queue-btn:hover {
+    background-color: greenyellow;
+}
+
+.menu-btn {
+    background-color: green;
+    box-shadow: 0px 10px 30px black;
+}
+
+.menu-btn:hover {
+    background-color: greenyellow;
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.batch-box {
+    background: linear-gradient(135deg, #ded8ce, #a926ef);
+    background-color: rgb(105, 143, 193);
+    border-radius: 15px;
+    padding: 40px 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 10px 30px blueviolet;
+    position: relative;
+    overflow: hidden;
+}
+
+.batch-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 100%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 1;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.current-batch, .duration-left, .cantiq, .waiting-time {
+    position: relative;
+    z-index: 2;
+}
+
+.current-batch {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.duration-left {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.cantiq {
+    font-size: 40px;
+    font-weight: bold;
+    color: #d35400;
+    background: linear-gradient(135deg, #f5b041, #d35400);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.waiting-time {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+
+a.btn {
+    text-decoration: none; /* Add this line to remove underline */
+}

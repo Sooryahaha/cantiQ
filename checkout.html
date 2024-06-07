@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkoutstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <ul id="order-items">
+                <!-- order items will be displayed here -->
+            </ul>
+            <p>Total: <span id="total-amount">0</span> rupees</p>
+        </div>
+        <div class="payment-options">
+            <h2>Payment Options</h2>
+            <form id="payment-form">
+                <label>
+                    <input type="radio" name="payment-method" value="card">
+                    Credit/Debit Card
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="netbanking">
+                    Net Banking
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="wallet">
+                    Wallet
+                </label>
+                <button id="pay-btn">Pay Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Razorpay
+        var options = {
+            "key": "YOUR_RAZORPAY_KEY",
+            "amount": "100", // Amount in paise
+            "currency": "INR",
+            "name": "Your Company Name",
+            "description": "Your Company Description",
+            "image": "https://example.com/your-image.jpg",
+            "order_id": "", // Order ID
+            "callback_url": "https://example.com/callback", // Callback URL
+            "preference": {
+                "redirect": {
+                    "url": "https://example.com/success"
+                }
+            }
+        };
+
+        // Create a Razorpay instance
+        var rzp = new Razorpay(options);
+
+        // Add event listener to the pay button
+        document.getElementById('pay-btn').addEventListener('click', function() {
+            // Get the selected payment method
+            var paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+
+            // Create a payment object
+            var payment = {
+                "amount": options.amount,
+                "currency": options.currency,
+                "payment_method": paymentMethod
+            };
+
+            // Make the payment
+            rzp.open(payment);
+        });
+    </script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>

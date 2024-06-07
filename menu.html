@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="menustyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Menu</h1>
+        <div class="menu">
+            <div class="menu-item">
+                <span class="item-name">Biriyani</span>
+                <span class="item-price">80 rupees</span>
+                <div class="item-controls">
+                    <button class="btn decrement" onclick="updateQuantity('biriyani', -1)">-</button>
+                    <span id="biriyani-quantity" class="item-quantity">0</span>
+                    <button class="btn increment" onclick="updateQuantity('biriyani', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Veg Fried Rice</span>
+                <span class="item-price">50 rupees</span>
+                <div class="item-controls">
+                    <button class="btn decrement" onclick="updateQuantity('vegFriedRice', -1)">-</button>
+                    <span id="vegFriedRice-quantity" class="item-quantity">0</span>
+                    <button class="btn increment" onclick="updateQuantity('vegFriedRice', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Aloo Paratha</span>
+                <span class="item-price">40 rupees</span>
+                <div class="item-controls">
+                    <button class="btn decrement" onclick="updateQuantity('alooParatha', -1)">-</button>
+                    <span id="alooParatha-quantity" class="item-quantity">0</span>
+                    <button class="btn increment" onclick="updateQuantity('alooParatha', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Chapathi</span>
+                <span class="item-price">40 rupees</span>
+                <div class="item-controls">
+                    <button class="btn decrement" onclick="updateQuantity('chapathi', -1)">-</button>
+                    <span id="chapathi-quantity" class="item-quantity">0</span>
+                    <button class="btn increment" onclick="updateQuantity('chapathi', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Mini Meals</span>
+                <span class="item-price">45 rupees</span>
+                <div class="item-controls">
+                    <button class="btn decrement" onclick="updateQuantity('miniMeals', -1)">-</button>
+                    <span id="miniMeals-quantity" class="item-quantity">0</span>
+                    <button class="btn increment" onclick="updateQuantity('miniMeals', 1)">+</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Executive Meals</span>
+                <span class="item-price">70 rupees</span>
+                <div class="item-controls">
+                    <button class="btn decrement" onclick="updateQuantity('executiveMeals', -1)">-</button>
+                    <span id="executiveMeals-quantity" class="item-quantity">0</span>
+                    <button class="btn increment" onclick="updateQuantity('executiveMeals', 1)">+</button>
+                </div>
+            </div>
+        </div>
+        <div class="cart">
+            <h2>Cart</h2>
+            <p>Total Order Value: <span id="total-value">0</span> rupees</p>
+            <button class="btn back-btn" onclick="goBack()">Back</button>
+            <button class="btn checkout-btn" onclick="proceedToCheckout()">Checkout</button>
+        </div>
+    </div>
+    <script src="menuscript.js"></script>
+</body>
+</html>

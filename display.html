@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scanned Bill Details</title>
+    <link rel="stylesheet" href="displaystyles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Bill Details</h2>
+        <table id="bill-table">
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </table>
+        <p>Total: <span id="total-amount"></span></p>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const billData = JSON.parse(decodeURIComponent(urlParams.get('data')));
+
+        const billTable = document.getElementById('bill-table');
+        billData.items.forEach(item => {
+            const row = billTable.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+            cell1.innerText = item.name;
+            cell2.innerText = item.quantity;
+            cell3.innerText = item.price;
+        });
+
+        document.getElementById('total-amount').innerText = billData.total;
+    </script>
+</body>
+</html>

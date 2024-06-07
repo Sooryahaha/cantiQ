@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Food Queue</title>
+    <link rel="stylesheet" href="homestyles.css">
+</head>
+<body onload="startClock()">
+    <div class="container">
+        <div class="header">
+            <div class="icons">
+                <div class="icon user-icon">
+                    <img src="/menu/userhomepg-removebg-preview.png" alt="User Icon">
+                </div>
+                <div class="icon cart-icon">
+                    <img src="/menu/carthomepg-removebg-preview.png" alt="Cart Icon">
+                </div>
+                <div>
+                    <p class="cantiq">CantiQ</p>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="batchpage.html" class="btn queue-btn">QUEUE</a>
+            <button class="btn menu-btn" onclick="redirectToMenu()">MENU</button>
+        </div>
+        <div class="status">
+            <div class="batch-box">
+                <p class="current-batch">Current Batch: Batch 1</p>
+                <p class="duration-left">Duration Left: 20 minutes</p>
+                <p class="waiting-time"><strong>TIME:</strong> <span id="time"></span></p>
+            </div>
+        </div>
+    </div>
+    <script src="homescript.js"></script>
+    <script>
+        function redirectToMenu() {
+            window.location.href = "menuredir.html";
+        }
+    </script>
+</body>
+</html>
